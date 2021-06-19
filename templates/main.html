@@ -8,29 +8,50 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="{{url_for('static',filename='menu.css') }}">
+  <link rel="stylesheet" href="{{url_for('static',filename='header.css') }}">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-light">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="/">메인</a>
+<header class="header">
+
+<h4 class="kang">20200681 강현인 기말고사</h4>
+
+<h2 class="lol">공부 계획서</h2>
+
+<div class="header__gnb">
+
+  <ul class="#">
+
+    <li class="#">
+      <a class="ma" href="/">메인</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/signup">회원가입</a>
+    
+    <li class="#">
+      <a class="ma" href="/signup">회원가입</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/search">검색</a>
+
+    <li class="#">
+      <a class="ma" href="/search">로그인</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/football">축구</a>
+
+    <li class="#">
+      <a class="ma" href="/baseball">프로그래밍</a>
     </li>
+
+
   </ul>
-</nav>
+
+</div>
+
+</header>
+
 <br>
 
 <div class="container-fluid">
-  <h3>누구누구 프로젝트 입니다</h3>
+  <br>
+
   
   
 </div>
