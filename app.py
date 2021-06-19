@@ -1,15 +1,19 @@
 from flask import Flask, render_template, request, session, redirect
 
+from flask import Flask, render_template
+
 from test import idpw_ck
 import adb
 
 app = Flask(__name__)
 
+
+
 # 세션처리를 위한 키
 app.secret_key = b'aaa!111/'
 
 @app.route('/')
-def hello():
+def main():
     return render_template('main.html')
 
 @app.route('/baseball')
@@ -25,8 +29,10 @@ def signup():
         userid = request.form['userid']
         pwd = request.form['pwd']
         # 회원정보를 데이터베이스에 넣기
-        adb.insert_user(userid, name, pwd)
+        #adb.insert_user(userid, name, pwd)
+        return redirect('/')
         return '<b>{}, {}, {}</b> 님 회원가입 되었습니다.'.format(name, userid, pwd)
+        
 
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
@@ -36,13 +42,13 @@ def signin():
         userid = request.form['userid']
         pwd = request.form['pwd']
         # 로그인이 맞는 체크해서 데이터가 있으면 성공 없으면 실패
-        ret = adb.get_user(userid, pwd)
-        if ret != None:
-            print(ret[1])
-            session['name'] = ret[1]  # 세션에 정보 넣기
-            return redirect('/')
-        else:
-            return redirect('/signin')
+        #ret = adb.get_user(userid, pwd)
+        #if ret != None:
+        #    print(ret[1])
+        #    session['name'] = ret[1]  # 세션에 정보 넣기
+        #    return redirect('/')
+        #else:
+        #    return redirect('/signin')
         # return idpw_ck(userid, pwd)
 
 @app.route('/logout')
@@ -84,5 +90,5 @@ def football():
 # 배구페이지
 # 농구페이지
 
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+#    app.run(debug=True)
